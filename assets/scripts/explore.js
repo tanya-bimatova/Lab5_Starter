@@ -41,7 +41,7 @@ function init() {
 
   });
 
-  synth.speaking.addEventListener('change', (event) => {
+  synth.addEventListener('change', (event) => {
 
     if(synth.speaking == true){
       document.querySelector("img").src=`assets/images/smiling-open.png`;
