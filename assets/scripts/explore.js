@@ -3,7 +3,7 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  const synth = speechSynthesis
+  const synth = window.speechSynthesis;
   let selectVoice = document.getElementById("voice-select");
   const voices = synth.getVoices();
 
@@ -36,10 +36,21 @@ function init() {
   selectVoice.addEventListener('change', (event) => {
 
     voice = event.target.value;
+
         
 
   });
 
+  synth.speaking.addEventListener('change', (event) => {
+
+    if(synth.speaking == true){
+      document.querySelector("img").src=`assets/images/smiling-open.png`;
+    }
+    else{
+      document.querySelector("img").src=`assets/images/smiling.png`;
+    }
+
+  });
   
 
   const buttonPressToTalk = document.querySelector('button');
@@ -57,5 +68,7 @@ function init() {
     synth.speak(utterThis);
     
   });
+
+
 
 }
