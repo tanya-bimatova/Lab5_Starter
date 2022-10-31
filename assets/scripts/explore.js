@@ -55,11 +55,7 @@ function init() {
 
   const buttonPressToTalk = document.querySelector('button');
   const message = document.getElementById('text-to-speak')
-  console.log('before press')
   buttonPressToTalk.addEventListener('click', (event) => {
-    console.log('message: ')
-    console.log(message.value);
-    console.log('end of message')
     const utterThis = new SpeechSynthesisUtterance(message.value);
     for (let i = 0; i < voices.length ; i++) {
       if (voices[i].name === voice) {
@@ -73,16 +69,21 @@ function init() {
     utterThis.rate = 1;
     synth.speak(utterThis);
     document.querySelector("img").src=`assets/images/smiling-open.png`;
-    let test = true
-    // while(test == true){
-    //   if(synth.speaking == false){
-    //     document.querySelector("img").src=`assets/images/smiling.png`;
-    //     test == false
-    //   }
-    // }
+    
+ 
 
   });
-
+  var speaking = synth.speaking;
+  speaking.addListener(function (e) {
+    if (e.oldValue != e.newValue) {
+        if speaking == true{
+          document.querySelector("img").src=`assets/images/smiling-open.png`;
+        }
+        else {
+          document.querySelector("img").src=`assets/images/smiling.png`;
+        }
+    }
+});
 
 
 }
