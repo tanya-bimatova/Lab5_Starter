@@ -54,13 +54,13 @@ function init() {
   
 
   const buttonPressToTalk = document.querySelector('button');
-  const message = document.getElementById('text-to-speak').value
+  const message = document.getElementById('text-to-speak')
   console.log('before press')
   buttonPressToTalk.addEventListener('click', (event) => {
     console.log('message: ')
-    console.log(message);
+    console.log(message.value);
     console.log('end of message')
-    const utterThis = new SpeechSynthesisUtterance(message);
+    const utterThis = new SpeechSynthesisUtterance(message.value);
     for (let i = 0; i < voices.length ; i++) {
       if (voices[i].name === voice) {
         utterThis.voice = voices[i];
