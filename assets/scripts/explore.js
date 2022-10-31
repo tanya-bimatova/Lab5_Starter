@@ -9,13 +9,28 @@ function init() {
 
   const name = voices[0];
 
-  for(var i = 0; i < voices.length; i++) {
-    var opt = voices[i].name;
-    var el = document.createElement("option");
-    el.textContent = opt;
-    el.value = opt;
-    selectVoice.appendChild(el);
-}
+  function populateVoiceList() {
+    voices = synth.getVoices();
+  
+    for (let i = 0; i < voices.length ; i++) {
+      const option = document.createElement('option');
+      option.textContent = `${voices[i].name} (${voices[i].lang})`;
+  
+      if (voices[i].default) {
+        option.textContent += ' — DEFAULT';
+      }
+  
+      option.setAttribute('data-lang', voices[i].lang);
+      option.setAttribute('data-name', voices[i].name);
+      voiceSelect.appendChild(option);
+    }
+  }
+  
+  populateVoiceList();
+  
+  if (speechSynthesis.onvoiceschanged !== undefined) {
+    speechSynthesis.onvoiceschanged = populateVoiceList;
+  }
 
 
   selectVoice.addEventListener('change', (event) => {
