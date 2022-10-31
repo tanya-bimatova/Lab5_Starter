@@ -5,13 +5,12 @@ window.addEventListener('DOMContentLoaded', init);
 function init() {
   const synth = speechSynthesis
   let selectVoice = document.getElementById("voice-select");
-  let currChoice;
   const voices = synth.getVoices();
 
   const name = voices[0];
 
   for(var i = 0; i < voices.length; i++) {
-    var opt = voices;
+    var opt = voices[i];
     var el = document.createElement("option");
     el.textContent = opt.name;
     el.value = opt;
