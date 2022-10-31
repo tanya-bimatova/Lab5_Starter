@@ -76,7 +76,7 @@ function init() {
   var speaking = synth.speaking;
   speaking.addListener(function (e) {
     if (e.oldValue != e.newValue) {
-        if speaking == true{
+        if(speaking == true){
           document.querySelector("img").src=`assets/images/smiling-open.png`;
         }
         else {
