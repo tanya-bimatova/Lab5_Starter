@@ -58,7 +58,7 @@ function init() {
     utterThis.pitch = 1;
     utterThis.rate = 1;
     synth.speak(utterThis);
-    document.querySelector("img").src=`assets/images/smiling.png`
+    document.querySelector("img").src=`assets/images/smiling-open.png`
     utterThis.addEventListener("end", (event)=>{
       document.querySelector("img").src=`assets/images/smiling.png`;
   
