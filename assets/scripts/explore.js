@@ -10,7 +10,7 @@ function init() {
 
   const name = voices[0];
 
-  for(var i = 0; i < options.length; i++) {
+  for(var i = 0; i < voices.length; i++) {
     var opt = voices;
     var el = document.createElement("option");
     el.textContent = opt.name;
