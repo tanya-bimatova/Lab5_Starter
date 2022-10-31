@@ -74,12 +74,12 @@ function init() {
     synth.speak(utterThis);
     document.querySelector("img").src=`assets/images/smiling-open.png`;
     let test = true
-    while(test == true){
-      if(synth.speaking == false){
-        document.querySelector("img").src=`assets/images/smiling.png`;
-        test == false
-      }
-    }
+    // while(test == true){
+    //   if(synth.speaking == false){
+    //     document.querySelector("img").src=`assets/images/smiling.png`;
+    //     test == false
+    //   }
+    // }
 
   });
 
