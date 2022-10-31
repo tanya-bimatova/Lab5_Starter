@@ -1,4 +1,4 @@
-[expose part](expose.html)
-[explore part](explore.html)
+[expose part](/expose.html)
+[explore part](/explore.html)
 Tatiana Bimatova
 Vladimir Em
