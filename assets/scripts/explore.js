@@ -52,6 +52,18 @@ function init() {
 
   });
   
+  var speaking = synth.speaking;
+  var event = new Event('speaking');
+  window.dispatchEvent(event);
+
+  window.addEventListener("speaking", function() {
+    if(speaking == true){
+      document.querySelector("img").src=`assets/images/smiling-open.png`;
+    }
+    else{
+      document.querySelector("img").src=`assets/images/smiling.png`;
+    }
+  });
 
   const buttonPressToTalk = document.querySelector('button');
   const message = document.getElementById('text-to-speak')
@@ -68,22 +80,7 @@ function init() {
     utterThis.pitch = 1;
     utterThis.rate = 1;
     synth.speak(utterThis);
-    document.querySelector("img").src=`assets/images/smiling-open.png`;
-    
- 
-
   });
-  var speaking = synth.speaking;
-  var event = new Event('speaking');
-  window.dispatchEvent(event);
-
-  window.addEventListener("speaking", function() {
-    if(speaking == true){
-      document.querySelector("img").src=`assets/images/smiling-open.png`;
-    }
-    else{
-      document.querySelector("img").src=`assets/images/smiling.png`;
-    }
-});
+  
 
 }
