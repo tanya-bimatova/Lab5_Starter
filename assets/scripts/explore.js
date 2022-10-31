@@ -59,11 +59,11 @@ function init() {
     utterThis.rate = 1;
     synth.speak(utterThis);
     document.querySelector("img").src=`assets/images/smiling.png`
-    utterThis.addEventListener("stop"), (event)=>{
+    utterThis.addEventListener("stop", (event)=>{
       document.querySelector("img").src=`assets/images/smiling.png`;
-    }
-  });
   
+    });
+  });
   
 
 }
