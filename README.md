@@ -1,4 +1,4 @@
-[expose part](/expose.html)
-[explore part](/explore.html)
-Tatiana Bimatova
-Vladimir Em
+[expose part](/expose.html)\n
+[explore part](/explore.html)\n
+Tatiana Bimatova\n
+Vladimir Em\n
