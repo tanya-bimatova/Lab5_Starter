@@ -7,11 +7,19 @@ function init() {
   let currChoice;
   voices = synth.getVoices();
 
-  const name = '';
+  const name = voices[0];
+
+  for(var i = 0; i < options.length; i++) {
+    var opt = voices;
+    var el = document.createElement("option");
+    el.textContent = opt.name;
+    el.value = opt;
+    select.appendChild(el);
+}
 
   selectVoice.addEventListener('change', (event) => {
 
-    name = event.target.value;
+    voice = event.target.value;
         
 
   });
@@ -26,7 +34,7 @@ function init() {
     const utterThis = new SpeechSynthesisUtterance(message.value);
     for (let i = 0; i < voices.length ; i++) {
       if (voices[i].name === name) {
-        utterThis.voice = voices[i];
+        utterThis.voice = voice;
       }
     }
   
