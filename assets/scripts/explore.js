@@ -55,7 +55,7 @@ function init() {
 
   const buttonPressToTalk = document.querySelector('button');
   const message = document.getElementById('text-to-speak').value
-
+  console.log('before press')
   buttonPressToTalk.addEventListener('click', (event) => {
     console.log('message: ')
     console.log(message);
