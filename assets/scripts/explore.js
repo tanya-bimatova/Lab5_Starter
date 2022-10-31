@@ -57,18 +57,30 @@ function init() {
   const message = document.getElementById('text-to-speak').value
 
   buttonPressToTalk.addEventListener('click', (event) => {
+    console.log('message: ')
     console.log(message);
+    console.log('end of message')
     const utterThis = new SpeechSynthesisUtterance(message);
     for (let i = 0; i < voices.length ; i++) {
       if (voices[i].name === voice) {
         utterThis.voice = voices[i];
       }
     }
-  
+    
+    
+
     utterThis.pitch = 1;
     utterThis.rate = 1;
     synth.speak(utterThis);
-    
+    document.querySelector("img").src=`assets/images/smiling-open.png`;
+    let test = true
+    while(test == true){
+      if(synth.speaking == false){
+        document.querySelector("img").src=`assets/images/smiling.png`;
+        test == false
+      }
+    }
+
   });
 
 
