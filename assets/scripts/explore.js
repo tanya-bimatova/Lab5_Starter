@@ -57,7 +57,7 @@ function init() {
   const message = document.getElementById('text-to-speak').value
 
   buttonPressToTalk.addEventListener('click', (event) => {
-    
+    console.log(message);
     const utterThis = new SpeechSynthesisUtterance(message);
     for (let i = 0; i < voices.length ; i++) {
       if (voices[i].name === voice) {
