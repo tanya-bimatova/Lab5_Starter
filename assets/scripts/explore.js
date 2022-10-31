@@ -7,7 +7,7 @@ function init() {
   let selectVoice = document.getElementById("voice-select");
   const voices = synth.getVoices();
 
-  const voice = voices[0];
+  let voice = voices[0];
 
   function populateVoiceList() {
     
