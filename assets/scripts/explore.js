@@ -10,9 +10,9 @@ function init() {
   const name = voices[0];
 
   for(var i = 0; i < voices.length; i++) {
-    var opt = voices[i];
+    var opt = voices[i].name;
     var el = document.createElement("option");
-    el.textContent = opt.name;
+    el.textContent = opt;
     el.value = opt;
     selectVoice.appendChild(el);
 }
@@ -34,8 +34,8 @@ function init() {
     
     const utterThis = new SpeechSynthesisUtterance(message.value);
     for (let i = 0; i < voices.length ; i++) {
-      if (voices[i].name === name) {
-        utterThis.voice = voice;
+      if (voices[i].name === voice) {
+        utterThis.voice = voices[i];
       }
     }
   
