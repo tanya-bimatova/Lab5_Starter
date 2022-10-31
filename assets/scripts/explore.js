@@ -59,7 +59,7 @@ function init() {
     utterThis.rate = 1;
     synth.speak(utterThis);
     document.querySelector("img").src=`assets/images/smiling.png`
-    utterThis.addEventListener("stop", (event)=>{
+    utterThis.addEventListener("end", (event)=>{
       document.querySelector("img").src=`assets/images/smiling.png`;
   
     });
