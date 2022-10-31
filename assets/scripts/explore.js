@@ -1,7 +1,7 @@
 // explore.js
 
 window.addEventListener('DOMContentLoaded', init);
-const synt = speechSynthesis
+const synth = speechSynthesis
 function init() {
   let selectVoice = document.getElementById("voice-select");
   let currChoice;
