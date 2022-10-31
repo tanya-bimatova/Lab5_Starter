@@ -65,6 +65,8 @@ function init() {
       }
     }
   
+    utterThis.pitch = 1;
+    utterThis.rate = 1;
     synth.speak(utterThis);
     
   });
