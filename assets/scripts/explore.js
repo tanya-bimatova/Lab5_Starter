@@ -15,7 +15,7 @@ function init() {
     var el = document.createElement("option");
     el.textContent = opt.name;
     el.value = opt;
-    select.appendChild(el);
+    selectVoice.appendChild(el);
 }
 
 
